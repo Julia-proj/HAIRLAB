@@ -75,6 +75,7 @@
 
   /* Animations */
   --animate-mesh-float: mesh-float 20s ease-in-out infinite;
+  --animate-scroll-hint: scroll-hint 2s ease-in-out infinite;
 }
 
 @keyframes mesh-float {
@@ -84,14 +85,71 @@
   75%      { transform: translate(8%, 3%) scale(1.03); }
 }
 
+@keyframes scroll-hint {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
+}
+
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-cream-50 text-charcoal font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   h1, h2, h3 {
     @apply font-serif;
+  }
+}
+
+/* Quiz question slide animations */
+@keyframes slideFromRight {
+  from { transform: translateX(24px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes slideFromLeft {
+  from { transform: translateX(-24px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+.slide-from-right {
+  animation: slideFromRight 250ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.slide-from-left {
+  animation: slideFromLeft 250ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Quiz option cards — desktop hover (unselected only) */
+@media (hover: hover) {
+  .quiz-option-card:not(.quiz-option-selected):hover {
+    border-color: var(--color-cream-400);
+    background-color: var(--color-cream-200);
+  }
+}
+
+/* Source tiles — desktop-only hover effects */
+@media (hover: hover) {
+  .source-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--color-cream-400);
+  }
+}
+
+/* Damage cards — desktop-only hover effects */
+@media (hover: hover) {
+  .damage-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+  .damage-card:hover .damage-card-accent {
+    opacity: 1;
+  }
+  .damage-card .damage-card-accent {
+    opacity: 0;
   }
 }
