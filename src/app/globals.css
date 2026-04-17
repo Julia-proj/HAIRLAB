@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-cream-50: #F7F4F0;
+  --color-cream-100: #EDE8E1;
+  --color-cream-200: #E3DDD4;
+  --color-cream-300: #D8D2CB;
+  --color-cream-400: #C4BDB4;
+
+  --color-charcoal: #2C2825;
+  --color-charcoal-light: #6B6560;
+  --color-charcoal-muted: #9C9590;
+
+  --color-sage: #7C8C6E;
+  --color-sage-dark: #6A7A5E;
+  --color-sage-light: #C8D4C0;
+
+  --color-sand: #C4A882;
+  --color-sand-light: #E0D4C8;
+
+  --color-error: #B85C5C;
+
+  /* Font families */
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Font sizes */
+  --text-hero: 4.5rem;
+  --text-hero--line-height: 1.1;
+  --text-hero--letter-spacing: -0.02em;
+
+  --text-section: 3rem;
+  --text-section--line-height: 1.2;
+  --text-section--letter-spacing: -0.02em;
+
+  --text-sub: 2rem;
+  --text-sub--line-height: 1.3;
+  --text-sub--letter-spacing: -0.01em;
+
+  --text-card: 1.5rem;
+  --text-card--line-height: 1.4;
+
+  --text-body-lg: 1.25rem;
+  --text-body-lg--line-height: 1.6;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.05em;
+
+  /* Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+
+  /* Max width */
+  --container-prose: 680px;
+  --container-container: 1200px;
+
+  /* Border radius */
+  --radius: 8px;
+  --radius-card: 12px;
+
+  /* Box shadows */
+  --shadow-card-hover: 0 2px 8px rgba(44, 40, 37, 0.06);
+  --shadow-elevated: 0 4px 16px rgba(44, 40, 37, 0.08);
+
+  /* Animations */
+  --animate-mesh-float: mesh-float 20s ease-in-out infinite;
+}
+
+@keyframes mesh-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25%      { transform: translate(5%, -8%) scale(1.05); }
+  50%      { transform: translate(-3%, 5%) scale(0.95); }
+  75%      { transform: translate(8%, 3%) scale(1.03); }
+}
+
+@layer base {
+  body {
+    @apply bg-cream-50 text-charcoal font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
