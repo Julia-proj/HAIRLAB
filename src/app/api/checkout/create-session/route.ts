@@ -2,10 +2,15 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { auth } from "@/lib/auth";
 
-// apiVersion omitted — SDK v22 defaults to the installed version (2026-03-25.dahlia)
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+// Lazy-init so the module can be evaluated at build time without the key
+function getStripe() {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) throw new Error("STRIPE_SECRET_KEY is not set");
+  return new Stripe(key);
+}
 
 export async function POST() {
+  const stripe = getStripe();
   const session = await auth();
 
   try {
@@ -16,7 +21,7 @@ export async function POST() {
         {
           price_data: {
             currency: "eur",
-            unit_amount: 4900,
+            unit_amount: 3900,
             product_data: {
               name: "Keratin Madrid — Hair Recovery System",
               description: "5 видеоуроков + AI-диагностика + PDF-гайды",
