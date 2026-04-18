@@ -1,16 +1,17 @@
 import { NextResponse } from "next/server";
-import Stripe from "stripe";
 import { auth } from "@/lib/auth";
 
-// Lazy-init so the module can be evaluated at build time without the key
-function getStripe() {
-  const key = process.env.STRIPE_SECRET_KEY;
-  if (!key) throw new Error("STRIPE_SECRET_KEY is not set");
-  return new Stripe(key);
-}
-
 export async function POST() {
-  const stripe = getStripe();
+  // Dynamic import so the Stripe SDK is never loaded at build time
+  const { default: Stripe } = await import("stripe");
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) {
+    return NextResponse.json(
+      { error: "Stripe is not configured" },
+      { status: 500 }
+    );
+  }
+  const stripe = new Stripe(key);
   const session = await auth();
 
   try {
