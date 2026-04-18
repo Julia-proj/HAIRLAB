@@ -92,7 +92,7 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -105,6 +105,12 @@
   h1, h2, h3 {
     @apply font-serif;
   }
+}
+
+/* Fixed bottom CTA bar — promote to own GPU layer */
+.flow-bottom-bar {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Quiz question slide animations */

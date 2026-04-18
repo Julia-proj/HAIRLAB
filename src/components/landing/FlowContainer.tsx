@@ -59,7 +59,7 @@ export default function FlowContainer() {
     <div className="min-h-screen bg-cream-50 overflow-x-hidden">
       <ProgressBar current={current} total={TOTAL} />
 
-      <div className="fixed top-[3px] left-0 right-0 h-12 z-40 flex items-center justify-between px-5">
+      <div className="fixed top-[3px] left-0 right-0 h-12 z-40 flex items-center px-5 bg-cream-50/90 backdrop-blur-[8px]">
         {current > 0 ? (
           <button
             type="button"
@@ -70,15 +70,6 @@ export default function FlowContainer() {
           </button>
         ) : (
           <div />
-        )}
-        {current < TOTAL - 1 && (
-          <button
-            type="button"
-            onClick={() => goTo(TOTAL - 1)}
-            className="font-sans text-[12px] text-charcoal-muted hover:text-charcoal-light transition-colors duration-150"
-          >
-            Перейти к курсу
-          </button>
         )}
       </div>
 

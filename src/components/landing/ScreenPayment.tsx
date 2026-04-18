@@ -21,10 +21,10 @@ export default function ScreenPayment() {
       </p>
 
       <div className="flex flex-col items-start gap-1 mb-8">
-        <p className="font-serif text-[22px] text-charcoal-muted line-through">89 евро</p>
+        <p className="font-serif text-[22px] text-charcoal-muted line-through">49 евро</p>
         <p className="font-sans text-[11px] text-charcoal-muted">обычная цена</p>
         <p className="font-serif font-normal text-[56px] leading-[1] tracking-[-0.02em] text-charcoal">
-          49 евро
+          39 евро
         </p>
         <p className="font-sans text-[13px] text-charcoal-muted">один раз · доступ навсегда</p>
       </div>
@@ -49,14 +49,14 @@ export default function ScreenPayment() {
       </div>
 
       <div
-        className="fixed bottom-0 left-0 right-0 z-30"
+        className="flow-bottom-bar fixed bottom-0 left-0 right-0 z-30"
         style={{ background: "linear-gradient(to top, #F7F4F0 80%, transparent)" }}
       >
         <div
           className="px-5 pt-[14px]"
           style={{ paddingBottom: "max(24px, env(safe-area-inset-bottom))" }}
         >
-          <FlowButton onClick={handlePay}>Оплатить 49 евро</FlowButton>
+          <FlowButton onClick={handlePay}>Оплатить 39 евро</FlowButton>
           <div className="flex items-center justify-center gap-2 mt-3">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <rect x="2" y="6" width="10" height="7" rx="1.5" stroke="#9C9590" strokeWidth="1.3" />

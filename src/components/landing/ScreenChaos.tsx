@@ -77,7 +77,7 @@ export default function ScreenChaos({ onNext }: Props) {
       </div>
 
       <div
-        className="fixed bottom-0 left-0 right-0 z-30"
+        className="flow-bottom-bar fixed bottom-0 left-0 right-0 z-30"
         style={{ background: "linear-gradient(to top, #F7F4F0 80%, transparent)" }}
       >
         <div

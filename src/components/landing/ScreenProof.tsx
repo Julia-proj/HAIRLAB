@@ -57,7 +57,7 @@ export default function ScreenProof({ onNext }: Props) {
           <div className="h-px bg-cream-300 my-1" />
           <div className="flex justify-between items-center">
             <span className="font-sans text-[14px] font-medium text-charcoal">Этот курс</span>
-            <span className="font-serif text-[22px] text-sage">49 евро</span>
+            <span className="font-serif text-[22px] text-sage">39 евро</span>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@ export default function ScreenProof({ onNext }: Props) {
       </div>
 
       <div
-        className="fixed bottom-0 left-0 right-0 z-30"
+        className="flow-bottom-bar fixed bottom-0 left-0 right-0 z-30"
         style={{ background: "linear-gradient(to top, #F7F4F0 80%, transparent)" }}
       >
         <div

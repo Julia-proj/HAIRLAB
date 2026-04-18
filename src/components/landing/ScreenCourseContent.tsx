@@ -55,7 +55,7 @@ export default function ScreenCourseContent({ onNext }: Props) {
       <p className="font-sans text-[13px] text-charcoal-muted">Доступ навсегда. Смотри в своём темпе.</p>
 
       <div
-        className="fixed bottom-0 left-0 right-0 z-30"
+        className="flow-bottom-bar fixed bottom-0 left-0 right-0 z-30"
         style={{ background: "linear-gradient(to top, #F7F4F0 80%, transparent)" }}
       >
         <div
