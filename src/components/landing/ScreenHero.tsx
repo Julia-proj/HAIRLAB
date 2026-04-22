@@ -1,4 +1,5 @@
 import GradientMesh from "./GradientMesh";
+import GlassOrbs from "./GlassOrbs";
 import FlowButton from "@/components/ui/FlowButton";
 
 interface Props {
@@ -9,6 +10,7 @@ export default function ScreenHero({ onNext }: Props) {
   return (
     <div className="relative min-h-[calc(100vh-51px)] flex flex-col overflow-hidden pb-[120px]">
       <GradientMesh />
+      <GlassOrbs />
 
       <div className="relative z-10 flex flex-col flex-1 justify-center px-5 pt-8">
         <div className="flex items-center gap-2 mb-6">

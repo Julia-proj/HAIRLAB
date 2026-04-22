@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function MasterSection() {
@@ -39,19 +40,15 @@ export default function MasterSection() {
 
           {/* Left — photo */}
           <figure className="m-0">
-            <div
-              className="w-full aspect-[4/5] rounded-[12px] overflow-hidden relative flex flex-col items-center justify-center gap-2"
-              style={{
-                background:
-                  "linear-gradient(135deg, #E8E0D6 0%, #D4CBBC 50%, #E0D4C8 100%)",
-              }}
-            >
-              <span className="font-sans text-[11px] font-medium uppercase tracking-[0.1em] text-charcoal-muted">
-                Фото Елены
-              </span>
-              <span className="font-sans text-xs text-charcoal-muted">
-                4:5 портрет
-              </span>
+            <div className="w-full aspect-[4/5] rounded-[12px] overflow-hidden relative">
+              <Image
+                src="/images/elena.jpg"
+                alt="Елена — мастер по восстановлению волос"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 45vw"
+                priority
+              />
             </div>
           </figure>
 

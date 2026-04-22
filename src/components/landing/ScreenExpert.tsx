@@ -1,3 +1,4 @@
+import Image from "next/image";
 import FlowButton from "@/components/ui/FlowButton";
 
 const COMPARISON = [
@@ -38,15 +39,15 @@ export default function ScreenExpert({ onNext }: Props) {
           Она видела 5000 голов до твоей.
         </h2>
 
-        <div
-          className="w-full aspect-[3/2] rounded-[12px] flex flex-col items-center justify-center mb-6"
-          style={{
-            background: "linear-gradient(135deg, #E8E0D6 0%, #D4CBBC 50%, #E0D4C8 100%)",
-          }}
-        >
-          <span className="font-sans text-[11px] font-medium uppercase tracking-[0.1em] text-charcoal-muted">
-            Фото Елены
-          </span>
+        <div className="w-full aspect-[3/2] rounded-[12px] overflow-hidden relative mb-6">
+          <Image
+            src="/images/elena.jpg"
+            alt="Елена — мастер по восстановлению волос"
+            fill
+            className="object-cover object-top"
+            sizes="100vw"
+            priority
+          />
         </div>
 
         <div className="flex items-center gap-6 mb-6">
