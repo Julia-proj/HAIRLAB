@@ -59,18 +59,20 @@ export default function FlowContainer() {
     <div className="min-h-screen bg-cream-50 overflow-x-hidden">
       <ProgressBar current={current} total={TOTAL} />
 
-      <div className="fixed top-[3px] left-0 right-0 h-12 z-40 flex items-center px-5 bg-cream-50/90 backdrop-blur-[8px]">
+      <div 
+        className={`fixed top-[3px] left-0 right-0 h-12 z-40 flex items-center px-5 transition-colors duration-300 ${
+          current > 0 ? "bg-cream-50/90 backdrop-blur-[8px]" : "bg-transparent pointer-events-none"
+        }`}
+      >
         {current > 0 ? (
           <button
             type="button"
             onClick={goBack}
-            className="font-sans text-[13px] font-medium text-sage hover:text-sage-dark transition-colors duration-150"
+            className="font-sans text-[13px] font-medium text-sage hover:text-sage-dark transition-colors duration-150 pointer-events-auto"
           >
             ← Назад
           </button>
-        ) : (
-          <div />
-        )}
+        ) : null}
       </div>
 
       <div key={animKey} className={`pt-[51px] ${animClass}`}>

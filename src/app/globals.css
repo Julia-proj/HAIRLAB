@@ -76,6 +76,16 @@
   /* Animations */
   --animate-mesh-float: mesh-float 20s ease-in-out infinite;
   --animate-scroll-hint: scroll-hint 2s ease-in-out infinite;
+  --animate-aurora: aurora 60s linear infinite;
+}
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
 }
 
 @keyframes mesh-float {
@@ -88,6 +98,50 @@
 @keyframes scroll-hint {
   0%, 100% { opacity: 0.4; }
   50%      { opacity: 1; }
+}
+
+/* ─── Hero silent lux 2026 ──────────────────────────────────────────────── */
+
+@keyframes light-sweep {
+  0%   { transform: translateX(-120%) rotate(25deg); opacity: 0; }
+  10%  { opacity: 0.06; }
+  50%  { opacity: 0.09; }
+  90%  { opacity: 0.06; }
+  100% { transform: translateX(120%) rotate(25deg); opacity: 0; }
+}
+
+@keyframes focal-breathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 0.72; }
+  50%       { transform: translate(-50%, -50%) scale(1.04); opacity: 0.82; }
+}
+
+@keyframes ring-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg);   }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes ring-spin-rev {
+  from { transform: translate(-50%, -50%) rotate(0deg);    }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes particle-rise-a {
+  0%   { transform: translate(0, 0)   scale(1);   opacity: 0; }
+  15%  { opacity: 0.55; }
+  85%  { opacity: 0.3; }
+  100% { transform: translate(12px, -80px) scale(0.5); opacity: 0; }
+}
+@keyframes particle-rise-b {
+  0%   { transform: translate(0, 0)    scale(1);   opacity: 0; }
+  15%  { opacity: 0.45; }
+  85%  { opacity: 0.2; }
+  100% { transform: translate(-10px, -70px) scale(0.4); opacity: 0; }
+}
+@keyframes particle-rise-c {
+  0%   { transform: translate(0, 0)   scale(1);   opacity: 0; }
+  15%  { opacity: 0.5; }
+  85%  { opacity: 0.25; }
+  100% { transform: translate(6px, -90px) scale(0.6); opacity: 0; }
 }
 
 @layer base {
