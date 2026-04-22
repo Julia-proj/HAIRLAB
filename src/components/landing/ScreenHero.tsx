@@ -23,7 +23,7 @@ const itemVariants = {
   hidden: { opacity: 0, y: 18 },
   show: {
     opacity: 1, y: 0,
-    transition: { type: "spring", stiffness: 70, damping: 22, mass: 1 },
+    transition: { type: "spring" as const, stiffness: 70, damping: 22, mass: 1 },
   },
 };
 
